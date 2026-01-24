@@ -4,16 +4,21 @@ export default function Page() {
   return (
     <main>
       <h1>エリア一覧</h1>
-      <ul>
-        {areas.map(area => (
-          <li key={area.id}>
-            <h2>{area.name}</h2>
-            <p>家賃上限: {area.rentMax}</p>
-            <p>家賃下限: {area.rentMin}</p>
-            <p>{area.comment}</p>
-          </li>
+      <div className="area-list">
+        {areas.map((area) => (
+
+          <div key={area.id} className="area-card">
+
+            <h2 className="are-name">{area.name}</h2>
+
+            <div className="area-rent">
+              <p>家賃: {area.rentMin} ~ {area.rentMax}</p>
+            </div>
+
+            <p className="area-comment">{area.comment}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </main>
   )
 }
