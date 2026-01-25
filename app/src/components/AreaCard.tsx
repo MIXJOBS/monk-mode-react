@@ -1,3 +1,5 @@
+"use client";
+
 import { Area } from "../types/area"
 
 type Props = {
@@ -6,7 +8,12 @@ type Props = {
 
 export const AreaCard = ({ area }: Props) => {
   return (
-    <div className="area-card">
+    <div 
+        className="area-card"
+        onClick={() => {
+          console.log(area.id);
+        }}
+      >
       <h2 className="area-name">{area.name}</h2>
 
       <div className="area-rent">
